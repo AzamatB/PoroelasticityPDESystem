@@ -89,7 +89,7 @@ function fitPDESystem!(K, α, µ, ρ₀, ρ₀ˢ, ρ₀ˡ,
    pde_system = PDESystem(equations, boundconds, domain, [t, x₁, x₂], [u₁, u₂, v₁, v₂, σ₁₁, σ₁₂, σ₂₂, p])
 
    problem = NeuralPDE.discretize(pde_system, discretization)
-   optimizer = Flux.ADAM(0.01)
+   optimizer = Flux.ADAM(0.05)
    callback = function (p, l)
        println("Current loss is: $l")
        return false
