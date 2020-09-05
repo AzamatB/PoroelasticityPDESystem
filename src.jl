@@ -79,12 +79,15 @@ function fitPDESystem!(K, α, µ, ρ₀, ρ₀ˢ, ρ₀ˡ,
    domain = [t ∈ tspan, x₁ ∈ x₁span, x₂ ∈ x₂span]
 
    # Neural network
-   nnet = FastChain(FastDense(3,  64, Flux.tanh),
-                    FastDense(64, 64, Flux.selu),
+   nnet = FastChain(FastDense(3,  64, Flux.selu),
+                    FastDense(64, 64, Flux.σ),
                     FastDense(64, 64, Flux.σ),
                     FastDense(64, 8))
 
-   discretization = PhysicsInformedNN([Δt, Δx₁, Δx₂], nnet; strategy)
+   # Initial neural network training parameters
+   initθ = initial_params(nnet) |> gpu
+
+   discretization = PhysicsInformedNN([Δt, Δx₁, Δx₂], nnet, initθ; strategy)
 
    pde_system = PDESystem(equations, boundconds, domain, [t, x₁, x₂], [u₁, u₂, v₁, v₂, σ₁₁, σ₁₂, σ₂₂, p])
 
