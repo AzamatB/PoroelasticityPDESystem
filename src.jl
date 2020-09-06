@@ -124,7 +124,7 @@ function fitPDESystem!(K, α, µ, ρ₀, ρ₀ˢ, ρ₀ˡ,
       return false
    end
 
-   res = GalacticOptim.solve(problem, optimizer; progress=false, cb=callback, maxiters)
+   @time res = GalacticOptim.solve(problem, optimizer; progress=false, cb=callback, maxiters)
 
    ϕ = discretization.phi
    θopt = res.minimizer
