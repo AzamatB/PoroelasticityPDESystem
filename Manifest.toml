@@ -366,6 +366,11 @@ git-tree-sha1 = "a8d88c05a23b44b4da6cf4fb5659e13ff95e0f47"
 uuid = "7869d1d1-7146-5819-86e3-90919afe41df"
 version = "0.4.1"
 
+[[IfElse]]
+git-tree-sha1 = "28e837ff3e7a6c3cdb252ce49fb412c8eb3caeef"
+uuid = "615f187c-cbe4-4ef1-ba3b-2fcf58d6d173"
+version = "0.1.0"
+
 [[Inflate]]
 git-tree-sha1 = "f5fc07d4e706b84f72d54eedcc1c13d92fb0871c"
 uuid = "d25df0c9-e2be-5dd7-82c8-3ad0b3e990b9"
@@ -514,10 +519,10 @@ version = "0.4.4"
 uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 
 [[ModelingToolkit]]
-deps = ["ArrayInterface", "DataStructures", "DiffEqBase", "DiffEqJump", "DiffRules", "Distributed", "DocStringExtensions", "GeneralizedGenerated", "LabelledArrays", "Latexify", "Libdl", "LightGraphs", "LinearAlgebra", "MacroTools", "NaNMath", "RecursiveArrayTools", "Requires", "SafeTestsets", "SparseArrays", "SpecialFunctions", "StaticArrays", "SymbolicUtils", "TreeViews", "UnPack", "Unitful"]
-git-tree-sha1 = "62f0e68d4efc108617d7eb9a664c604be80bcb81"
+deps = ["ArrayInterface", "DataStructures", "DiffEqBase", "DiffEqJump", "DiffRules", "Distributed", "DocStringExtensions", "GeneralizedGenerated", "IfElse", "LabelledArrays", "Latexify", "Libdl", "LightGraphs", "LinearAlgebra", "MacroTools", "NaNMath", "RecursiveArrayTools", "Requires", "SafeTestsets", "SparseArrays", "SpecialFunctions", "StaticArrays", "SymbolicUtils", "TreeViews", "UnPack", "Unitful"]
+git-tree-sha1 = "aea52f25fdd87e2f31d511c338da12c89c6a4838"
 uuid = "961ee093-0014-501f-94e3-6117800e7a78"
-version = "3.19.0"
+version = "3.20.0"
 
 [[MuladdMacro]]
 git-tree-sha1 = "c6190f9a7fc5d9d5915ab29f2134421b12d24a68"
@@ -555,11 +560,11 @@ version = "0.1.5"
 
 [[NeuralPDE]]
 deps = ["Adapt", "CUDA", "DiffEqBase", "DiffEqFlux", "DiffEqNoiseProcess", "DiffEqSensitivity", "Distributions", "Flux", "ForwardDiff", "GalacticOptim", "LinearAlgebra", "ModelingToolkit", "Optim", "Random", "Reexport", "Statistics", "StochasticDiffEq", "Tracker", "Zygote"]
-git-tree-sha1 = "049c6cba01c9b552fbf62a30f87c67a99bd91a0d"
+git-tree-sha1 = "4928d42047bc1e0ef5da60793d3158e7cf867ef7"
 repo-rev = "master"
 repo-url = "https://github.com/SciML/NeuralPDE.jl.git"
 uuid = "315f7962-48a3-4962-8226-d0f33b1235f0"
-version = "2.1.0"
+version = "2.2.0"
 
 [[OffsetArrays]]
 git-tree-sha1 = "b8500f9d73999cfbab4add5136ec26894081581e"
