@@ -4,8 +4,8 @@ using Flux
 using DiffEqFlux
 using GalacticOptim
 
-using CUDA
-CUDA.allowscalar(false)
+# using CUDA
+# CUDA.allowscalar(false)
 
 function NeuralPDE.PhysicsInformedNN(dx, chain::Chain, initθ; autodiff=false, strategy = GridTraining(), kwargs...)
    indim = size(nnet.layers[1].W, 2)
@@ -172,6 +172,10 @@ x₂span = IntervalDomain(0.f0, 100.f0)
 w = fitPDESystem!(K, α, µ, ρ₀, ρ₀ˢ, ρ₀ˡ,
                   F₁, F₂,
                   tspan, x₁span, x₂span,
-                  Δt, Δx₁, Δx₂)
+                  Δt, Δx₁, Δx₂; maxiters=1000)
 
 w(tspan.lower, x₁span.lower, x₂span.lower)
+
+
+
+w(1, 2, 3)
